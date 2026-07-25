@@ -16,27 +16,27 @@ const features = [
   {
     icon: Brain,
     title: 'AI Tutor',
-    desc: 'Ask questions about the lecture and get instant, context-aware answers from a tutor that actually watched it.',
+    desc: 'Ask questions about the lecture and get instant, context-aware answers from a tutor that actually watched it. [COMING SOON]',
   },
   {
     icon: Layers,
     title: 'Flashcards',
-    desc: 'Spaced-repetition flashcards created from key concepts so you remember more with less effort.',
+    desc: 'Spaced-repetition flashcards created from key concepts so you remember more with less effort. [COMING SOON]',
   },
   {
     icon: HelpCircle,
     title: 'AI Quiz',
-    desc: 'Auto-generated quizzes that test your understanding and pinpoint exactly where you need to review.',
+    desc: 'Auto-generated quizzes that test your understanding and pinpoint exactly where you need to review.[COMING SOON]',
   },
   {
     icon: TrendingUp,
     title: 'Progress Tracking',
-    desc: 'A study dashboard that visualizes mastery, streaks and weak spots across every subject you learn.',
+    desc: 'A study dashboard that visualizes mastery, streaks and weak spots across every subject you learn.[COMING SOON]',
   },
   {
     icon: Clock,
     title: 'Lecture Timeline',
-    desc: 'Jump to any moment with a chapter-by-chapter timeline mapping topics to timestamps.',
+    desc: 'Jump to any moment with a chapter-by-chapter timeline mapping topics to timestamps.[COMING SOON]',
   },
 ]
 

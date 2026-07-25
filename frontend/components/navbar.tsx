@@ -15,6 +15,7 @@ const links = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const [showLoginModal, setShowLoginModal] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -35,6 +36,7 @@ export function Navbar() {
           <span className="flex size-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-purple via-brand-blue to-brand-cyan">
             <Sparkles className="size-4 text-primary-foreground" />
           </span>
+
           <span className="text-sm font-semibold tracking-tight sm:text-base">
             QuickNotesLab <span className="text-gradient">AI</span>
           </span>
@@ -53,9 +55,14 @@ export function Navbar() {
         </div>
 
         <div className="hidden items-center gap-2 md:flex">
-          <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
+          <Button
+            variant="ghost"
+            onClick={() => setShowLoginModal(true)}
+            className="text-muted-foreground hover:text-foreground"
+          >
             Login
           </Button>
+
           <Button className="rounded-xl bg-gradient-to-r from-brand-purple to-brand-blue text-primary-foreground shadow-lg shadow-brand-purple/20 transition-all duration-300 hover:shadow-xl hover:shadow-brand-purple/40 hover:brightness-110 active:scale-95">
             Get Started
           </Button>
@@ -85,12 +92,66 @@ export function Navbar() {
                 {l.label}
               </a>
             ))}
+
             <div className="mt-2 flex flex-col gap-2">
-              <Button variant="ghost">Login</Button>
+              <Button
+                variant="ghost"
+                onClick={() => {
+                  setOpen(false)
+                  setShowLoginModal(true)
+                }}
+              >
+                Login
+              </Button>
+
               <Button className="bg-gradient-to-r from-brand-purple to-brand-blue text-primary-foreground">
                 Get Started
               </Button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Login Modal */}
+      {showLoginModal && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4"
+          onClick={() => setShowLoginModal(false)}
+        >
+          <div
+            className="w-full max-w-md rounded-3xl border border-border bg-card p-8 shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="mb-6 text-center">
+              <div className="mb-4 text-5xl">🔐</div>
+
+              <h2 className="text-2xl font-bold">
+                Authentication Coming Soon
+              </h2>
+
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">
+                Authentication will be available in{' '}
+                <span className="font-semibold text-foreground">
+                  QuickNotesLab v2
+                </span>
+                .
+              </p>
+            </div>
+
+            <div className="space-y-3 rounded-2xl bg-secondary/40 p-5 text-sm">
+              <p>✅ Save unlimited workspaces</p>
+              <p>✅ Access your notes from any device</p>
+              <p>✅ Sync across devices</p>
+              <p>✅ Study history</p>
+              <p>✅ Personalized dashboard</p>
+            </div>
+
+            <Button
+              onClick={() => setShowLoginModal(false)}
+              className="mt-6 w-full rounded-xl bg-gradient-to-r from-brand-purple to-brand-blue text-primary-foreground"
+            >
+              Got it
+            </Button>
           </div>
         </div>
       )}
