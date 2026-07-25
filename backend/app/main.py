@@ -11,6 +11,7 @@ app = FastAPI(title="QuickNotesLab AI")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
+        "https://quick-notes-lab-ai.vercel.app"
         "http://localhost:3000",
         "http://127.0.0.1:3000",
     ],
