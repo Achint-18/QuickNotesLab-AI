@@ -3,7 +3,7 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { Sparkles, Play, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { api } from '@/services/api'
+import  api  from '@/services/api'
 import LoadingOverlay from '@/components/loading-overlay'
 
 
