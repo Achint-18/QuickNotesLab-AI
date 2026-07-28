@@ -27,7 +27,7 @@ const items = [
 
 export default function WorkspaceSidebar() {
   return (
-    <aside className="w-72 border-r border-border bg-card/40 backdrop-blur-xl">
+    <aside className="w-full md:w-72 border-b md:border-b-0 md:border-r border-border bg-card/40 backdrop-blur-xl">
       <div className="border-b border-border p-6">
         <h2 className="text-2xl font-bold">
           📚 QuickNotesLab
@@ -38,14 +38,14 @@ export default function WorkspaceSidebar() {
         </p>
       </div>
 
-      <nav className="space-y-2 p-4">
+      <nav className="flex md:block gap-2 overflow-x-auto p-3 md:p-4">
         {items.map((item) => {
           const Icon = item.icon
 
           return (
             <button
               key={item.title}
-              className={`flex w-full items-center justify-between rounded-xl px-4 py-3 transition-all ${
+              className={`flex min-w-[150px] md:w-full items-center justify-between rounded-xl px-4 py-3 transition-all ${
                 item.active
                   ? 'bg-brand-purple text-white'
                   : 'hover:bg-muted'

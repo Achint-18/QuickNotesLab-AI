@@ -21,14 +21,14 @@ export default function WorkspacePage() {
   }, [])
 
   return (
-    <main className="flex h-screen bg-background text-foreground">
+    <main className="flex flex-col md:flex-row h-screen bg-background text-foreground">
       <WorkspaceSidebar />
 
       <div className="flex flex-1 flex-col overflow-hidden">
         <WorkspaceHeader />
 
-        <div className="flex-1 overflow-y-auto p-10">
-          <div className="mx-auto max-w-4xl rounded-3xl border border-border bg-card/50 p-10 shadow-2xl">
+        <div className="flex-1 overflow-y-auto p-4 md:p-10">
+          <div className="mx-auto w-full max-w-4xl rounded-3xl border border-border bg-card/50 p-5 md:p-10 shadow-2xl">
 
             {notes ? (
               <article
@@ -38,17 +38,20 @@ export default function WorkspacePage() {
                 leading-8
 
                 [&_h1]:mb-6
-                [&_h1]:text-5xl
+                [&_h1]:text-3xl
+                md:[&_h1]:text-5xl
                 [&_h1]:font-bold
 
                 [&_h2]:mt-10
                 [&_h2]:mb-4
-                [&_h2]:text-3xl
+                [&_h2]:text-2xl
+                md:[&_h2]:text-3xl
                 [&_h2]:font-semibold
 
                 [&_h3]:mt-8
                 [&_h3]:mb-3
-                [&_h3]:text-2xl
+                [&_h3]:text-xl
+                md:[&_h3]:text-2xl
                 [&_h3]:font-semibold
 
                 [&_p]:text-gray-300

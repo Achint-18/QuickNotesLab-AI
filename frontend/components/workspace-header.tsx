@@ -32,7 +32,7 @@ export default function WorkspaceHeader() {
   }
 
   return (
-    <header className="flex items-center justify-between border-b border-border bg-background/80 px-8 py-5 backdrop-blur-xl">
+    <header className="flex flex-col md:flex-row gap-4 md:items-center md:justify-between border-b border-border bg-background/80 px-4 md:px-8 py-5 backdrop-blur-xl">
       <div>
         <h1 className="text-3xl font-bold">
           📝 AI Generated Notes
@@ -43,10 +43,10 @@ export default function WorkspaceHeader() {
         </p>
       </div>
 
-      <div className="flex gap-3">
+      <div className="flex w-full md:w-auto gap-3">
         <button
           onClick={copyNotes}
-          className="flex items-center gap-2 rounded-xl border border-border px-4 py-2 transition hover:bg-muted"
+          className="flex-1 md:flex-none flex items-center justify-center gap-2 rounded-xl border border-border px-4 py-2 transition hover:bg-muted"
         >
           <Copy size={18} />
           Copy
@@ -54,7 +54,7 @@ export default function WorkspaceHeader() {
 
         <button
           onClick={downloadMarkdown}
-          className="flex items-center gap-2 rounded-xl bg-brand-purple px-4 py-2 text-white transition hover:opacity-90"
+          className="flex-1 md:flex-none flex items-center justify-center gap-2 rounded-xl bg-brand-purple px-4 py-2 text-white transition hover:opacity-90"
         >
           <Download size={18} />
           Download
